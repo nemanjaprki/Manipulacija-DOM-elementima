@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+ 
+  <html lang="en"> 
+   
+    <head> 
+    <meta charset="UTF-8">  
+    <link href="style51.css" Rel="stylesheet">
+     
+     </head> 
+      
+         <body> 
+                <div id="login"> 
+                            <p><strong>Username</strong></p> 
+                            <div><input id="login-username" type="text"/> </div>  
+                            <p><strong>Password</strong></p>
+                            <div><input id="login-password" type="password"/> </div>
+                                
+                             <button onclick="Login()">Login</button>
+                       </div>  
+                         <div id="massage"></div>
+                    
+                <script> 
+                      var users= [ 
+                          {username: "new_user", password: "123456789"}
+                        
+                      ]
+                
+                      function Login() { 
+                          var username = document.getElementById("login-username").value; 
+                          var password = document.getElementById("login-password").value; 
+                          var uspeh = false; 
+                           
+                           for(var i=0; i<users.length; i++) { 
+                               if(users[i].username == username && users[i].password == password) { 
+                                   uspeh = true; 
+                                   break;
+                               }
+                           }
+                              if(uspeh) {  
+
+                                  document.getElementById("massage").innerHTML = "";
+                              }    
+                              else {                         
+                                  document.getElementById("massage").innerHTML = "please, enter valid username or password";
+                              }
+                      }
+
+                       
+                </script>
+
+         </body> 
+          
+           </html>
